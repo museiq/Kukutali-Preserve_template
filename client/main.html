@@ -1,0 +1,30 @@
+<head>
+  <title>app_skeleton</title>
+</head>
+
+<body>
+  <h1>Kukutali Preserve Guide</h1>
+    {{> info}}
+<div id="map" style="width:75%;height:500px;overflow:hidden;"></div>
+<script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+    center: new google.maps.LatLng(48.4197, -122.5659), 
+    zoom: 15,
+    mapTypeId: 'satellite'
+  }
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script> 
+</body>
+
+<template name="info">
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template>
